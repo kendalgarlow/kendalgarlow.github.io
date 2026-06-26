@@ -1,16 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kendal Garlow</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kendal Garlow</title>
+
+  <style>
+    :root {
+      --paper: #f4efe6;
+      --sage: #8f9f82;
+      --deep-sage: #4f604c;
+      --walnut: #6f4e37;
+      --ink: #26231f;
+      --clay: #b8795f;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Courier New", Courier, monospace;
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 28px 8vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(38, 35, 31, 0.18);
+    }
+
+    .name {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.04em;
+    }
+
+    nav a {
+      color: var(--ink);
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    nav a:hover {
+      color: var(--deep-sage);
+      border-bottom: 1px solid var(--deep-sage);
+    }
+
+    main {
+      padding: 12vh 8vw;
+    }
+
+    .hero {
+      max-width: 1050px;
+    }
+
+    .eyebrow {
+      color: var(--deep-sage);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.85rem;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      font-weight: 400;
+      line-height: 0.95;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    .subtitle {
+      margin-top: 34px;
+      max-width: 720px;
+      font-size: 1.15rem;
+    }
+
+    .statement {
+      margin-top: 70px;
+      max-width: 820px;
+      font-family: "Times New Roman", Times, serif;
+      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      line-height: 1.12;
+      color: var(--deep-sage);
+    }
+
+    .grid {
+      margin-top: 90px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      border: 1px solid rgba(38, 35, 31, 0.18);
+      padding: 28px;
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .card h2 {
+      font-family: "Times New Roman", Times, serif;
+      font-weight: 400;
+      font-size: 1.7rem;
+      margin: 0 0 14px;
+      color: var(--walnut);
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      padding: 40px 8vw;
+      border-top: 1px solid rgba(38, 35, 31, 0.18);
+      font-size: 0.85rem;
+      color: var(--deep-sage);
+    }
+
+    @media (max-width: 800px) {
+      header {
+        display: block;
+      }
+
+      nav {
+        margin-top: 18px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0 14px 10px 0;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header>
+    <div class="name">Kendal Garlow</div>
+    <nav>
+      <a href="#">About</a>
+      <a href="#">Research</a>
+      <a href="#">Career</a>
+      <a href="#">Media</a>
+      <a href="#">CV</a>
+    </nav>
+  </header>
 
-    <h1>Kendal Garlow</h1>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Mohawk Nation · Wolf Clan · Six Nations of the Grand River</p>
 
-    <p>If you're reading this, we did it.</p>
+      <h1>Kendal<br>Garlow</h1>
 
+      <p class="subtitle">
+        Researcher, founder, and community collaborator working across Indigenous food sovereignty,
+        seed governance, climate resilience, and community-led innovation.
+      </p>
+
+      <div class="statement">
+        A living archive of research, food systems, technology, and the communities that shape them.
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Research</h2>
+        <p>Indigenous food sovereignty, Haudenosaunee food systems, seed governance, and climate-resilient agriculture.</p>
+      </div>
+
+      <div class="card">
+        <h2>Career</h2>
+        <p>Founder of SproutSync Ltd., Indigenous Mentorship Network coordinator, podcast co-host, and community-based researcher.</p>
+      </div>
+
+      <div class="card">
+        <h2>Media</h2>
+        <p>Features, interviews, podcast work, awards, accelerator highlights, and public-facing conversations.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Kendal Garlow · Personal academic website and archive.
+  </footer>
 </body>
 </html>
