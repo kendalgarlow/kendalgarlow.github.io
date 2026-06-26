@@ -15,35 +15,61 @@
       --clay: #b8795f;
     }
 
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      background: var(--paper);
+      background:
+        linear-gradient(rgba(244,239,230,.95), rgba(244,239,230,.95)),
+        radial-gradient(circle at top left, rgba(111,78,55,.15), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(143,159,130,.24), transparent 35%);
       color: var(--ink);
       font-family: "Courier New", Courier, monospace;
       line-height: 1.7;
     }
 
+    a {
+      color: var(--deep-sage);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(79,96,76,.35);
+    }
+
+    a:hover {
+      color: var(--walnut);
+      border-bottom-color: var(--walnut);
+    }
+
     header {
-      padding: 28px 8vw;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 22px 7vw;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(38, 35, 31, 0.18);
+      background: rgba(244,239,230,.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(38,35,31,.18);
     }
 
-    .name {
+    .brand {
       font-family: "Times New Roman", Times, serif;
-      font-size: 1.4rem;
-      letter-spacing: 0.04em;
+      font-size: 1.35rem;
+      letter-spacing: .04em;
+      color: var(--ink);
+      border-bottom: none;
     }
 
     nav a {
       color: var(--ink);
       text-decoration: none;
-      margin-left: 22px;
-      font-size: 0.85rem;
+      border-bottom: none;
+      margin-left: 18px;
+      font-size: .78rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: .12em;
     }
 
     nav a:hover {
@@ -51,142 +77,359 @@
       border-bottom: 1px solid var(--deep-sage);
     }
 
-    main {
-      padding: 12vh 8vw;
+    main { padding: 0 7vw; }
+
+    section {
+      padding: 95px 0;
+      border-bottom: 1px solid rgba(38,35,31,.14);
     }
 
     .hero {
-      max-width: 1050px;
+      min-height: 86vh;
+      display: grid;
+      align-content: center;
+      max-width: 1120px;
     }
 
     .eyebrow {
       color: var(--deep-sage);
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.85rem;
+      letter-spacing: .18em;
+      font-size: .82rem;
       margin-bottom: 28px;
     }
 
-    h1 {
+    h1, h2, h3 {
       font-family: "Times New Roman", Times, serif;
-      font-size: clamp(3.5rem, 9vw, 8rem);
       font-weight: 400;
-      line-height: 0.95;
+    }
+
+    h1 {
+      font-size: clamp(4rem, 10vw, 9rem);
+      line-height: .9;
       margin: 0;
-      color: var(--ink);
+    }
+
+    h2 {
+      font-size: clamp(2.3rem, 5vw, 4.7rem);
+      line-height: 1;
+      margin: 0 0 32px;
+      color: var(--deep-sage);
+    }
+
+    h3 {
+      font-size: 1.65rem;
+      margin: 0 0 12px;
+      color: var(--walnut);
     }
 
     .subtitle {
+      max-width: 760px;
       margin-top: 34px;
-      max-width: 720px;
-      font-size: 1.15rem;
+      font-size: 1.08rem;
     }
 
     .statement {
-      margin-top: 70px;
-      max-width: 820px;
+      margin-top: 65px;
+      max-width: 900px;
       font-family: "Times New Roman", Times, serif;
-      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      font-size: clamp(1.8rem, 4vw, 3.4rem);
       line-height: 1.12;
       color: var(--deep-sage);
     }
 
+    .button-row {
+      margin-top: 38px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      border: 1px solid var(--ink);
+      padding: 12px 18px;
+      text-decoration: none;
+      color: var(--ink);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .78rem;
+      background: rgba(255,255,255,.18);
+    }
+
+    .button:hover {
+      background: var(--deep-sage);
+      color: var(--paper);
+      border-color: var(--deep-sage);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 60px;
+      align-items: start;
+    }
+
     .grid {
-      margin-top: 90px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 22px;
     }
 
     .card {
-      border: 1px solid rgba(38, 35, 31, 0.18);
+      border: 1px solid rgba(38,35,31,.18);
+      background: rgba(255,255,255,.22);
       padding: 28px;
-      background: rgba(255, 255, 255, 0.22);
+      min-height: 220px;
     }
 
-    .card h2 {
-      font-family: "Times New Roman", Times, serif;
-      font-weight: 400;
-      font-size: 1.7rem;
-      margin: 0 0 14px;
-      color: var(--walnut);
+    .card p { margin: 0; }
+
+    .tag {
+      display: inline-block;
+      margin: 0 8px 8px 0;
+      padding: 6px 10px;
+      border: 1px solid rgba(38,35,31,.22);
+      color: var(--deep-sage);
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
     }
 
-    .card p {
-      margin: 0;
-      font-size: 0.95rem;
+    .timeline {
+      display: grid;
+      gap: 22px;
+    }
+
+    .item {
+      border-left: 2px solid var(--sage);
+      padding-left: 22px;
+    }
+
+    .item .date {
+      color: var(--deep-sage);
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 6px;
     }
 
     footer {
-      padding: 40px 8vw;
-      border-top: 1px solid rgba(38, 35, 31, 0.18);
-      font-size: 0.85rem;
+      padding: 45px 7vw;
       color: var(--deep-sage);
+      font-size: .84rem;
     }
 
-    @media (max-width: 800px) {
-      header {
-        display: block;
-      }
+    @media (max-width: 850px) {
+      header { display: block; }
 
-      nav {
-        margin-top: 18px;
-      }
+      nav { margin-top: 14px; }
 
       nav a {
         display: inline-block;
-        margin: 0 14px 10px 0;
+        margin: 0 12px 8px 0;
       }
 
-      .grid {
-        grid-template-columns: 1fr;
-      }
+      .two-col, .grid { grid-template-columns: 1fr; }
+
+      section { padding: 70px 0; }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <div class="name">Kendal Garlow</div>
+    <a class="brand" href="#home">Kendal Garlow</a>
     <nav>
-      <a href="#">About</a>
-      <a href="#">Research</a>
-      <a href="#">Career</a>
-      <a href="#">Media</a>
-      <a href="#">CV</a>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#career">Career</a>
+      <a href="#publications">Publications</a>
+      <a href="#media">Media</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="home">
       <p class="eyebrow">Mohawk Nation · Wolf Clan · Six Nations of the Grand River</p>
 
       <h1>Kendal<br>Garlow</h1>
 
       <p class="subtitle">
         Researcher, founder, and community collaborator working across Indigenous food sovereignty,
-        seed governance, climate resilience, and community-led innovation.
+        seed governance, climate resilience, technology, and community-led innovation.
       </p>
 
       <div class="statement">
         A living archive of research, food systems, technology, and the communities that shape them.
       </div>
+
+      <div class="button-row">
+        <a class="button" href="#research">Research</a>
+        <a class="button" href="#career">Career</a>
+        <a class="button" href="#contact">Contact</a>
+      </div>
     </section>
 
-    <section class="grid">
-      <div class="card">
-        <h2>Research</h2>
-        <p>Indigenous food sovereignty, Haudenosaunee food systems, seed governance, and climate-resilient agriculture.</p>
-      </div>
+    <section id="about">
+      <div class="two-col">
+        <h2>About</h2>
+        <div>
+          <p>
+            I am a Mohawk Nation, Wolf Clan researcher from Six Nations of the Grand River.
+            My work is rooted in Indigenous food sovereignty, Haudenosaunee food systems,
+            community-based research, seed governance, and climate-resilient agriculture.
+          </p>
 
-      <div class="card">
-        <h2>Career</h2>
-        <p>Founder of SproutSync Ltd., Indigenous Mentorship Network coordinator, podcast co-host, and community-based researcher.</p>
-      </div>
+          <p>
+            Across academic, entrepreneurial, and community spaces, I am interested in how Indigenous
+            communities protect knowledge, strengthen food systems, and build futures grounded in
+            self-determination, care, and relational responsibility.
+          </p>
 
-      <div class="card">
-        <h2>Media</h2>
-        <p>Features, interviews, podcast work, awards, accelerator highlights, and public-facing conversations.</p>
+          <span class="tag">Indigenous food sovereignty</span>
+          <span class="tag">Seed governance</span>
+          <span class="tag">Climate resilience</span>
+          <span class="tag">Community research</span>
+          <span class="tag">Technology</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Master’s Research</h3>
+          <p>
+            <em>Ogyohsraniyohsdoh: The Relationship Between Haudenosaunee Identity and Food Decisions.</em>
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Doctoral Direction</h3>
+          <p>
+            Comparative research on Indigenous food sovereignty, seed governance, and climate-resilient
+            agricultural systems in Canada and Guatemala.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Research Approach</h3>
+          <p>
+            Community-based participatory research, storytelling, Indigenous methodologies,
+            and community-led evaluation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="career">
+      <h2>Career</h2>
+
+      <div class="timeline">
+        <div class="item">
+          <div class="date">Founder & CEO</div>
+          <h3>SproutSync Ltd.</h3>
+          <p>
+            Indigenous-led greenhouse automation company supporting growers through accessible
+            technology, climate monitoring, irrigation tools, and food sovereignty-focused innovation.
+          </p>
+        </div>
+
+        <div class="item">
+          <div class="date">Coordinator</div>
+          <h3>Indigenous Mentorship Network</h3>
+          <p>
+            Supporting Indigenous graduate students, mentorship programming, networking,
+            webinars, and community-building across academic spaces.
+          </p>
+        </div>
+
+        <div class="item">
+          <div class="date">Co-host</div>
+          <h3>Ajuinata Podcast</h3>
+          <p>
+            Podcast conversations centering Indigenous knowledge, community, research,
+            and lived experience.
+          </p>
+        </div>
+
+        <div class="item">
+          <div class="date">Community Work</div>
+          <h3>Food Systems & Wellbeing</h3>
+          <p>
+            Work connected to Indigenous food systems, community programming, mentorship,
+            and food sovereignty initiatives.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="two-col">
+        <h2>Publications</h2>
+
+        <div>
+          <p>
+            Publications, reports, posters, and conference presentations will be archived here.
+          </p>
+
+          <p>
+            Selected work includes research on Haudenosaunee identity, food decisions,
+            Indigenous food sovereignty, and community-based food systems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="media">
+      <h2>Media & Features</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Pow Wow Pitch</h3>
+          <p>Category winner and finalist recognition for SproutSync Ltd.</p>
+        </div>
+
+        <div class="card">
+          <h3>Fireweed Accelerator</h3>
+          <p>Founder development, pitch refinement, investor networking, and venture growth.</p>
+        </div>
+
+        <div class="card">
+          <h3>RBC Women of Influence</h3>
+          <p>Nomination recognizing leadership, entrepreneurship, and community impact.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="two-col">
+        <h2>Contact</h2>
+
+        <div>
+          <p>
+            I welcome opportunities for research collaboration, media inquiries,
+            community partnerships, guest lectures, and speaking engagements.
+          </p>
+
+          <p>
+            <strong>Work</strong><br>
+            <a href="mailto:kendal@sproutsync.ca">kendal@sproutsync.ca</a>
+          </p>
+
+          <p>
+            <strong>Academic</strong><br>
+            <a href="mailto:kgarlow@uoguelph.ca">kgarlow@uoguelph.ca</a>
+          </p>
+
+          <p>
+            <strong>Location</strong><br>
+            Six Nations of the Grand River, Ontario, Canada
+          </p>
+        </div>
       </div>
     </section>
   </main>
